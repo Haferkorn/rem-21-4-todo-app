@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("api/todo")
 public class TodoController {
 
-   private TodoService todoService;
+    private TodoService todoService;
 
     @Autowired
     public TodoController(TodoService todoService) {
@@ -19,20 +19,22 @@ public class TodoController {
     }
 
     @GetMapping
-    public List<TodoItem> listAll(){
+    public List<TodoItem> listAll() {
         return todoService.list();
     }
 
     @PostMapping
-    public TodoItem addToDoItem(@RequestBody TodoItem todoItem){
+    public TodoItem addToDoItem(@RequestBody TodoItem todoItem) {
         return todoService.add(todoItem);
     }
+
     @PutMapping("{id}")
-    public void updateStatus(@PathVariable int id, @RequestBody TodoItem todoItem){
-        todoService.updateStatus(id,todoItem.getStatus());
+    public void updateStatus(@PathVariable int id, @RequestBody TodoItem todoItem) {
+        todoService.updateStatus(id, todoItem.getStatus());
     }
+
     @DeleteMapping("{id}")
-    public void deleteItem(@PathVariable int id){
+    public void deleteItem(@PathVariable int id) {
         todoService.deleteItem(id);
     }
 

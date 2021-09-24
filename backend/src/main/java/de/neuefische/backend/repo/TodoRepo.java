@@ -11,18 +11,17 @@ import java.util.Map;
 
 @Repository
 public class TodoRepo {
-    Map<Integer, TodoItem> todoRepo =new HashMap<>();
-    private int id=1;
+    private final Map<Integer, TodoItem> todoRepo = new HashMap<>();
+    private int id = 1;
 
 
-    private int generateId(){
+    private int generateId() {
         return id++;
     }
-    public TodoItem add(TodoItem todoItem){
+
+    public TodoItem add(TodoItem todoItem) {
         todoItem.setId(generateId());
-        //System.out.println(todoItem);
-        todoRepo.put(todoItem.getId(),todoItem);
-        System.out.println(todoItem);
+        todoRepo.put(todoItem.getId(), todoItem);
         return todoItem;
     }
 
@@ -37,7 +36,8 @@ public class TodoRepo {
     public void deleteItem(int id) {
         todoRepo.remove(id);
     }
-    public void clear(){
+
+    public void clear() {
         todoRepo.clear();
     }
 }

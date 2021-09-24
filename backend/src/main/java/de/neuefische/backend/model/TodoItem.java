@@ -9,14 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TodoItem {
     int id;
-    String description;
-    String status;
+    private String description;
+    private String status;
 
-    public TodoItem(String description,String status){
-        this.description=description;
-        this.status=status;
+    public TodoItem(String description, String status) {
+        this.description = description;
+        this.status = status;
     }
-
 
 
 }

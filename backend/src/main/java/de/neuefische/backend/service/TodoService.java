@@ -11,12 +11,13 @@ import java.util.List;
 public class TodoService {
 
     private TodoRepo todoRepo;
+
     @Autowired
     public TodoService(TodoRepo todoRepo) {
         this.todoRepo = todoRepo;
     }
 
-    public TodoItem add(TodoItem todoItem){
+    public TodoItem add(TodoItem todoItem) {
         return todoRepo.add(todoItem);
     }
 
@@ -24,10 +25,10 @@ public class TodoService {
         return todoRepo.list();
     }
 
-    public void updateStatus(int id,String status) {
-      todoRepo
-              .getById(id)
-              .setStatus(status);
+    public void updateStatus(int id, String status) {
+        todoRepo
+                .getById(id)
+                .setStatus(status);
     }
 
 

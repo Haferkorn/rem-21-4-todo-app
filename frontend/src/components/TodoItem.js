@@ -1,15 +1,15 @@
 import styled from 'styled-components/macro'
 
-export default function TodoItem({ todo, onAdvance, onDelete }) {
-  return (
-    <Wrapper>
-      <p>{todo.description}</p>
-      <ButtonGroup>
-        {onAdvance && <button onClick={() => onAdvance(todo)}>Advance</button>}
-        {onDelete && <button onClick={() => onDelete(todo.id)}>Delete</button>}
-      </ButtonGroup>
-    </Wrapper>
-  )
+export default function TodoItem({todo, onAdvance, onDelete}) {
+    return (
+        <Wrapper>
+            <p>{todo.description}</p>
+            <ButtonGroup>
+                {onAdvance && <button onClick={() => onAdvance(todo)}>Advance</button>}
+                {onDelete && <button onClick={() => onDelete(todo.id)}>Delete</button>}
+            </ButtonGroup>
+        </Wrapper>
+    )
 }
 
 const Wrapper = styled.section`
